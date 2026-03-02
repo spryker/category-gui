@@ -24,11 +24,6 @@ class SearchController extends AbstractController
      */
     protected const REQUEST_PARAM_ID_CATEGORY_NODE = 'id-category-node';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     public function categoryStoreAction(Request $request): JsonResponse
     {
         $idCategoryNode = $this->castId($request->query->get(static::REQUEST_PARAM_ID_CATEGORY_NODE));
@@ -42,11 +37,6 @@ class SearchController extends AbstractController
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\StoreWithStateCollectionTransfer $storeWithStateCollectionTransfer
-     *
-     * @return array
-     */
     protected function extractStoresWithStateFromCollection(StoreWithStateCollectionTransfer $storeWithStateCollectionTransfer): array
     {
         return array_map(function (StoreWithStateTransfer $storeWithStateTransfers) {

@@ -24,19 +24,11 @@ class CategoryGuiToLocaleFacadeBridge implements CategoryGuiToLocaleFacadeInterf
         $this->localeFacade = $localeFacade;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\LocaleTransfer
-     */
     public function getCurrentLocale(): LocaleTransfer
     {
         return $this->localeFacade->getCurrentLocale();
     }
 
-    /**
-     * @param string $localeName
-     *
-     * @return \Generated\Shared\Transfer\LocaleTransfer
-     */
     public function getLocale(string $localeName): LocaleTransfer
     {
         return $this->localeFacade->getLocale($localeName);

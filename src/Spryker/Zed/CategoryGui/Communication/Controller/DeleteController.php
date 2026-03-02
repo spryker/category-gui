@@ -100,11 +100,6 @@ class DeleteController extends CategoryAbstractController
         return $this->getFactory()->getCategoryFacade()->getCategoryNodeUrls($categoryNodeUrlCriteriaTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CategoryTransfer $categoryTransfer
-     *
-     * @return array
-     */
     protected function getRelations(CategoryTransfer $categoryTransfer): array
     {
         $relations = [];
@@ -121,11 +116,6 @@ class DeleteController extends CategoryAbstractController
         return $relations;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CategoryTransfer $categoryTransfer
-     *
-     * @return \Generated\Shared\Transfer\NodeCollectionTransfer
-     */
     protected function getCategoryChildNodeCollection(CategoryTransfer $categoryTransfer): NodeCollectionTransfer
     {
         $categoryNodeCollectionTransfer = $categoryTransfer->getNodeCollection();
@@ -139,9 +129,6 @@ class DeleteController extends CategoryAbstractController
         return $nodeTransfer->getChildrenNodes() ?? new NodeCollectionTransfer();
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     protected function handleRootCategoryError(): RedirectResponse
     {
         $this->addErrorMessage(static::ERROR_MESSAGE_ROOT_CATEGORY_IS_NOT_REMOVABLE);
@@ -149,11 +136,6 @@ class DeleteController extends CategoryAbstractController
         return $this->redirectResponse(static::ROUTE_CATEGORY_LIST);
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $form
-     *
-     * @return \Generated\Shared\Transfer\CategoryResponseTransfer
-     */
     protected function handleCategoryDeleteForm(FormInterface $form): CategoryResponseTransfer
     {
         if (!$form->isSubmitted() || !$form->isValid()) {

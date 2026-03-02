@@ -18,19 +18,11 @@ class CategoryExpander implements CategoryExpanderInterface
      */
     protected $localeFacade;
 
-    /**
-     * @param \Spryker\Zed\CategoryGui\Dependency\Facade\CategoryGuiToLocaleFacadeInterface $localeFacade
-     */
     public function __construct(CategoryGuiToLocaleFacadeInterface $localeFacade)
     {
         $this->localeFacade = $localeFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CategoryTransfer $categoryTransfer
-     *
-     * @return \Generated\Shared\Transfer\CategoryTransfer
-     */
     public function expandCategoryWithLocalizedAttributes(CategoryTransfer $categoryTransfer): CategoryTransfer
     {
         $excludedCategoryLocaleIds = $this->extractCategoryLocaleIds($categoryTransfer);

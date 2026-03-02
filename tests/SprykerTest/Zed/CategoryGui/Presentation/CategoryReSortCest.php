@@ -23,22 +23,12 @@ use SprykerTest\Zed\CategoryGui\PageObject\CategoryReSortPage;
  */
 class CategoryReSortCest
 {
-    /**
-     * @param \SprykerTest\Zed\CategoryGui\CategoryPresentationTester $i
-     *
-     * @return void
-     */
     public function _before(CategoryPresentationTester $i): void
     {
         $i->amZed();
         $i->amLoggedInUser();
     }
 
-    /**
-     * @param \SprykerTest\Zed\CategoryGui\CategoryPresentationTester $i
-     *
-     * @return void
-     */
     public function testThatICanSeeSubCategories(CategoryPresentationTester $i): void
     {
         $i->amOnPage(CategoryReSortPage::URL);
@@ -46,11 +36,6 @@ class CategoryReSortCest
         $i->canSeeElement(CategoryReSortPage::SELECTOR_FIRST_SUB_CATEGORY);
     }
 
-    /**
-     * @param \SprykerTest\Zed\CategoryGui\CategoryPresentationTester $i
-     *
-     * @return void
-     */
     public function testThatICanMoveCategories(CategoryPresentationTester $i): void
     {
         $i->amOnPage(CategoryReSortPage::URL);
@@ -69,11 +54,6 @@ class CategoryReSortCest
         $i->canSee($firstItemName, CategoryReSortPage::SELECTOR_LAST_SUB_CATEGORY);
     }
 
-    /**
-     * @param \SprykerTest\Zed\CategoryGui\CategoryPresentationTester $i
-     *
-     * @return void
-     */
     public function testThatICanSaveReSortedSubCategories(CategoryPresentationTester $i): void
     {
         $i->createCategory(Category::CATEGORY_A);

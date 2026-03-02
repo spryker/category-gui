@@ -30,62 +30,31 @@ class CategoryGuiToCategoryFacadeBridge implements CategoryGuiToCategoryFacadeIn
         $this->categoryFacade = $categoryFacade;
     }
 
-    /**
-     * @param string $name
-     * @param \Generated\Shared\Transfer\CategoryTransfer $categoryTransfer
-     *
-     * @return bool
-     */
     public function checkSameLevelCategoryByNameExists(string $name, CategoryTransfer $categoryTransfer): bool
     {
         return $this->categoryFacade->checkSameLevelCategoryByNameExists($name, $categoryTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CategoryTransfer $categoryTransfer
-     *
-     * @return void
-     */
     public function create(CategoryTransfer $categoryTransfer): void
     {
         $this->categoryFacade->create($categoryTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\LocaleTransfer $localeTransfer
-     *
-     * @return \Generated\Shared\Transfer\CategoryCollectionTransfer
-     */
     public function getAllCategoryCollection(LocaleTransfer $localeTransfer): CategoryCollectionTransfer
     {
         return $this->categoryFacade->getAllCategoryCollection($localeTransfer);
     }
 
-    /**
-     * @param int $idCategory
-     *
-     * @return void
-     */
     public function delete(int $idCategory): void
     {
         $this->categoryFacade->delete($idCategory);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CategoryTransfer $categoryTransfer
-     *
-     * @return void
-     */
     public function update(CategoryTransfer $categoryTransfer): void
     {
         $this->categoryFacade->update($categoryTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CategoryCriteriaTransfer $categoryCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\CategoryTransfer|null
-     */
     public function findCategory(CategoryCriteriaTransfer $categoryCriteriaTransfer): ?CategoryTransfer
     {
         return $this->categoryFacade->findCategory($categoryCriteriaTransfer);
@@ -101,11 +70,6 @@ class CategoryGuiToCategoryFacadeBridge implements CategoryGuiToCategoryFacadeIn
         return $this->categoryFacade->getCategoryNodeUrls($categoryNodeUrlCriteriaTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CategoryNodeCollectionRequestTransfer $categoryNodeCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CategoryNodeCollectionResponseTransfer
-     */
     public function reorderCategoryNodeCollection(
         CategoryNodeCollectionRequestTransfer $categoryNodeCollectionRequestTransfer
     ): CategoryNodeCollectionResponseTransfer {

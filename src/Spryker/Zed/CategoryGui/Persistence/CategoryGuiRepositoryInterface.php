@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\CategoryTransfer;
 
 interface CategoryGuiRepositoryInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CategoryTransfer $categoryTransfer
-     *
-     * @return bool
-     */
     public function isCategoryKeyUsed(CategoryTransfer $categoryTransfer): bool;
 
     /**

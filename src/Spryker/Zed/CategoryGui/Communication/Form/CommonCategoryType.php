@@ -103,19 +103,11 @@ abstract class CommonCategoryType extends AbstractType
      */
     protected const BLOCK_PREFIX = 'category';
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return static::BLOCK_PREFIX;
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         parent::configureOptions($resolver);

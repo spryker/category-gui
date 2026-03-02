@@ -28,9 +28,6 @@ class DeleteType extends AbstractType
      */
     protected const BLOCK_PREFIX = 'categoryDelete';
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return static::BLOCK_PREFIX;

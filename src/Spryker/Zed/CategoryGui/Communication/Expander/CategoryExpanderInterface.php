@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\CategoryTransfer;
 
 interface CategoryExpanderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CategoryTransfer $categoryTransfer
-     *
-     * @return \Generated\Shared\Transfer\CategoryTransfer
-     */
     public function expandCategoryWithLocalizedAttributes(CategoryTransfer $categoryTransfer): CategoryTransfer;
 }

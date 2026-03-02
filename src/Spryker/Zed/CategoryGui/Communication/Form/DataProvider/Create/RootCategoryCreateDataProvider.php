@@ -26,10 +26,6 @@ class RootCategoryCreateDataProvider
      */
     protected $categoryExpander;
 
-    /**
-     * @param \Spryker\Zed\CategoryGui\Persistence\CategoryGuiRepositoryInterface $categoryGuiRepository
-     * @param \Spryker\Zed\CategoryGui\Communication\Expander\CategoryExpanderInterface $categoryExpander
-     */
     public function __construct(
         CategoryGuiRepositoryInterface $categoryGuiRepository,
         CategoryExpanderInterface $categoryExpander
@@ -38,9 +34,6 @@ class RootCategoryCreateDataProvider
         $this->categoryExpander = $categoryExpander;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CategoryTransfer
-     */
     public function getData(): CategoryTransfer
     {
         $categoryTransfer = (new CategoryTransfer())

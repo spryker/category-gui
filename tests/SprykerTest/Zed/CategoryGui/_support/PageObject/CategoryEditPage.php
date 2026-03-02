@@ -29,11 +29,6 @@ class CategoryEditPage extends Category
      */
     public const SUBMIT_BUTTON = 'Save';
 
-    /**
-     * @param int $idCategory
-     *
-     * @return string
-     */
     public static function getUrl(int $idCategory): string
     {
         return static::URL . $idCategory;

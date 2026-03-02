@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\CategoryTransfer;
 
 interface CategoryCreatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CategoryTransfer $categoryTransfer
-     *
-     * @return \Generated\Shared\Transfer\CategoryResponseTransfer
-     */
     public function createCategory(CategoryTransfer $categoryTransfer): CategoryResponseTransfer;
 }

@@ -9,10 +9,5 @@ namespace Spryker\Zed\CategoryGui\Communication\Category;
 
 interface CategoryNodeOrderUpdaterInterface
 {
-    /**
-     * @param string $categoryNodesData
-     *
-     * @return bool
-     */
     public function updateCategoryNodeOrder(string $categoryNodesData): bool;
 }

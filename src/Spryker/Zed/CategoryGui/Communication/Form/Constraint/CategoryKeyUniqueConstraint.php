@@ -42,19 +42,11 @@ class CategoryKeyUniqueConstraint extends Constraint
      */
     protected $translatorFacade;
 
-    /**
-     * @return \Spryker\Zed\CategoryGui\Persistence\CategoryGuiRepositoryInterface
-     */
     public function getCategoryGuiRepository(): CategoryGuiRepositoryInterface
     {
         return $this->categoryGuiRepository;
     }
 
-    /**
-     * @param string $categoryKey
-     *
-     * @return string
-     */
     public function getMessage(string $categoryKey): string
     {
         return $this->translatorFacade->trans(

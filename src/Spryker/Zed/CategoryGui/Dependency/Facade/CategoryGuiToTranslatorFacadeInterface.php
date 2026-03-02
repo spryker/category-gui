@@ -9,13 +9,5 @@ namespace Spryker\Zed\CategoryGui\Dependency\Facade;
 
 interface CategoryGuiToTranslatorFacadeInterface
 {
-    /**
-     * @param string $id
-     * @param array $parameters
-     * @param string|null $domain
-     * @param string|null $locale
-     *
-     * @return string
-     */
     public function trans(string $id, array $parameters = [], ?string $domain = null, ?string $locale = null): string;
 }

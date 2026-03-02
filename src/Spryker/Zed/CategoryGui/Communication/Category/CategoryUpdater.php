@@ -25,19 +25,11 @@ class CategoryUpdater implements CategoryUpdaterInterface
      */
     protected $categoryFacade;
 
-    /**
-     * @param \Spryker\Zed\CategoryGui\Dependency\Facade\CategoryGuiToCategoryFacadeInterface $categoryFacade
-     */
     public function __construct(CategoryGuiToCategoryFacadeInterface $categoryFacade)
     {
         $this->categoryFacade = $categoryFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CategoryTransfer $categoryTransfer
-     *
-     * @return \Generated\Shared\Transfer\CategoryResponseTransfer
-     */
     public function updateCategory(CategoryTransfer $categoryTransfer): CategoryResponseTransfer
     {
         $categoryResponseTransfer = (new CategoryResponseTransfer())

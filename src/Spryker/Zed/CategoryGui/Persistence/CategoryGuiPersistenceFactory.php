@@ -19,25 +19,16 @@ use Spryker\Zed\Kernel\Persistence\AbstractPersistenceFactory;
  */
 class CategoryGuiPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\Category\Persistence\SpyCategoryQuery
-     */
     public function getCategoryPropelQuery(): SpyCategoryQuery
     {
         return $this->getProvidedDependency(CategoryGuiDependencyProvider::PROPEL_QUERY_CATEGORY);
     }
 
-    /**
-     * @return \Orm\Zed\Category\Persistence\SpyCategoryTemplateQuery
-     */
     public function getCategoryTemplatePropelQuery(): SpyCategoryTemplateQuery
     {
         return $this->getProvidedDependency(CategoryGuiDependencyProvider::PROPEL_QUERY_CATEGORY_TEMPLATE);
     }
 
-    /**
-     * @return \Orm\Zed\Category\Persistence\SpyCategoryNodeQuery
-     */
     public function getCategoryNodePropelQuery(): SpyCategoryNodeQuery
     {
         return $this->getProvidedDependency(CategoryGuiDependencyProvider::PROPEL_QUERY_CATEGORY_NODE);

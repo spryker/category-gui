@@ -36,11 +36,6 @@ class CategoryFormTabs extends AbstractTabs
         $this->categoryFormTabExpanderPlugins = $categoryFormTabExpanderPlugins;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\TabsViewTransfer $tabsViewTransfer
-     *
-     * @return \Generated\Shared\Transfer\TabsViewTransfer
-     */
     protected function build(TabsViewTransfer $tabsViewTransfer): TabsViewTransfer
     {
         $this->addSettingTab($tabsViewTransfer)
@@ -80,11 +75,6 @@ class CategoryFormTabs extends AbstractTabs
         return $this;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\TabsViewTransfer $tabsViewTransfer
-     *
-     * @return \Generated\Shared\Transfer\TabsViewTransfer
-     */
     protected function executeCategoryFormTabExpanderPlugins(TabsViewTransfer $tabsViewTransfer): TabsViewTransfer
     {
         foreach ($this->categoryFormTabExpanderPlugins as $categoryFormTabExpanderPlugin) {

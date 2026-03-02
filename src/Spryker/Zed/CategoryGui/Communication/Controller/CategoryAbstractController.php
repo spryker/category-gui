@@ -46,9 +46,6 @@ abstract class CategoryAbstractController extends AbstractController
         }
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\LocaleTransfer
-     */
     protected function getCurrentLocale(): LocaleTransfer
     {
         if (!$this->currentLocale) {

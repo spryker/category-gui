@@ -25,10 +25,6 @@ class RootCategoryEditDataProvider
      */
     protected $categoryFinder;
 
-    /**
-     * @param \Spryker\Zed\CategoryGui\Persistence\CategoryGuiRepositoryInterface $categoryGuiRepository
-     * @param \Spryker\Zed\CategoryGui\Communication\Finder\CategoryFinderInterface $categoryFinder
-     */
     public function __construct(
         CategoryGuiRepositoryInterface $categoryGuiRepository,
         CategoryFinderInterface $categoryFinder
@@ -37,11 +33,6 @@ class RootCategoryEditDataProvider
         $this->categoryFinder = $categoryFinder;
     }
 
-    /**
-     * @param int $idCategory
-     *
-     * @return \Generated\Shared\Transfer\CategoryTransfer|null
-     */
     public function getData(int $idCategory): ?CategoryTransfer
     {
         return $this->categoryFinder->findCategoryWithLocalizedAttributesById($idCategory);

@@ -18,19 +18,11 @@ class CategoryDeleteDataProvider
      */
     protected $categoryFacade;
 
-    /**
-     * @param \Spryker\Zed\CategoryGui\Dependency\Facade\CategoryGuiToCategoryFacadeInterface $categoryFacade
-     */
     public function __construct(CategoryGuiToCategoryFacadeInterface $categoryFacade)
     {
         $this->categoryFacade = $categoryFacade;
     }
 
-    /**
-     * @param int $idCategory
-     *
-     * @return array
-     */
     public function getData(int $idCategory): array
     {
         $categoryCriteriaTransfer = (new CategoryCriteriaTransfer())

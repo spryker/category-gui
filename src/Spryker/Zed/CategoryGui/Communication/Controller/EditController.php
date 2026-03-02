@@ -79,11 +79,6 @@ class EditController extends CategoryAbstractController
         ]);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CategoryTransfer $categoryTransfer
-     *
-     * @return \Symfony\Component\Form\FormInterface
-     */
     protected function getForm(CategoryTransfer $categoryTransfer): FormInterface
     {
         if ($categoryTransfer->getCategoryNodeOrFail()->getIsRoot()) {
@@ -93,11 +88,6 @@ class EditController extends CategoryAbstractController
         return $this->getFactory()->createCategoryEditForm($categoryTransfer);
     }
 
-    /**
-     * @param int $idCategory
-     *
-     * @return string
-     */
     protected function createSuccessRedirectUrl(int $idCategory): string
     {
         $url = Url::generate(
@@ -110,11 +100,6 @@ class EditController extends CategoryAbstractController
         return $url->build();
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $form
-     *
-     * @return \Generated\Shared\Transfer\CategoryResponseTransfer
-     */
     protected function handleCategoryEditForm(FormInterface $form): CategoryResponseTransfer
     {
         if (!$form->isSubmitted() || !$form->isValid()) {

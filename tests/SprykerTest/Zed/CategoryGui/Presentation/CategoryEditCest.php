@@ -22,22 +22,12 @@ use SprykerTest\Zed\CategoryGui\PageObject\CategoryEditPage;
  */
 class CategoryEditCest
 {
-    /**
-     * @param \SprykerTest\Zed\CategoryGui\CategoryPresentationTester $i
-     *
-     * @return void
-     */
     public function _before(CategoryPresentationTester $i): void
     {
         $i->amZed();
         $i->amLoggedInUser();
     }
 
-    /**
-     * @param \SprykerTest\Zed\CategoryGui\CategoryPresentationTester $i
-     *
-     * @return void
-     */
     public function testICanOpenEditCategoryPage(CategoryPresentationTester $i): void
     {
         $categoryTransfer = $i->createCategory(CategoryEditPage::CATEGORY_A);
@@ -47,11 +37,6 @@ class CategoryEditCest
         $i->seeInField(CategoryEditPage::FORM_FIELD_CATEGORY_KEY, CategoryEditPage::CATEGORY_A);
     }
 
-    /**
-     * @param \SprykerTest\Zed\CategoryGui\CategoryPresentationTester $i
-     *
-     * @return void
-     */
     public function testICanEditCategoryCheckboxes(CategoryPresentationTester $i): void
     {
         $categoryTransfer = $i->createCategory(CategoryEditPage::CATEGORY_A);

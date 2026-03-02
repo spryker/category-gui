@@ -42,19 +42,11 @@ class CategoryLocalizedAttributeNameUniqueConstraint extends Constraint
      */
     protected $translatorFacade;
 
-    /**
-     * @return \Spryker\Zed\CategoryGui\Dependency\Facade\CategoryGuiToCategoryFacadeInterface
-     */
     public function getCategoryFacade(): CategoryGuiToCategoryFacadeInterface
     {
         return $this->categoryFacade;
     }
 
-    /**
-     * @param string $categoryName
-     *
-     * @return string
-     */
     public function getMessage(string $categoryName): string
     {
         return $this->translatorFacade->trans(

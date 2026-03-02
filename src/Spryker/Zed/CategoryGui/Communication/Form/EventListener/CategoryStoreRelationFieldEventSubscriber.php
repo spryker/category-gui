@@ -32,10 +32,6 @@ class CategoryStoreRelationFieldEventSubscriber implements EventSubscriberInterf
      */
     protected const HELP_TEXT_ASSIGN_PARENT_FIRST = 'If a store is not selectable, please make sure that the parent category is assigned to it first.';
 
-    /**
-     * @param \Spryker\Zed\CategoryGui\Communication\Finder\CategoryStoreWithStateFinderInterface $categoryStoreWithStateFinder
-     * @param \Spryker\Zed\Kernel\Communication\Form\FormTypeInterface $storeRelationFormTypePlugin
-     */
     public function __construct(
         CategoryStoreWithStateFinderInterface $categoryStoreWithStateFinder,
         FormTypeInterface $storeRelationFormTypePlugin
@@ -54,11 +50,6 @@ class CategoryStoreRelationFieldEventSubscriber implements EventSubscriberInterf
         ];
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormEvent $event
-     *
-     * @return void
-     */
     public function preSetData(FormEvent $event): void
     {
         $idCategoryNode = $this->extractIdParentCategoryNodeFromEvent($event);
@@ -83,19 +74,11 @@ class CategoryStoreRelationFieldEventSubscriber implements EventSubscriberInterf
         );
     }
 
-    /**
-     * @return string
-     */
     protected function getHelpMessageForStoreRelationSelector(): string
     {
         return static::HELP_TEXT_ASSIGN_PARENT_FIRST;
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormEvent $event
-     *
-     * @return int|null
-     */
     protected function extractIdParentCategoryNodeFromEvent(FormEvent $event): ?int
     {
         $categoryTransfer = $event->getData();

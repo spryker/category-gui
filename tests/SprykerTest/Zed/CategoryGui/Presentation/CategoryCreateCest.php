@@ -22,22 +22,12 @@ use SprykerTest\Zed\CategoryGui\PageObject\CategoryCreatePage;
  */
 class CategoryCreateCest
 {
-    /**
-     * @param \SprykerTest\Zed\CategoryGui\CategoryPresentationTester $i
-     *
-     * @return void
-     */
     public function _before(CategoryPresentationTester $i): void
     {
         $i->amZed();
         $i->amLoggedInUser();
     }
 
-    /**
-     * @param \SprykerTest\Zed\CategoryGui\CategoryPresentationTester $i
-     *
-     * @return void
-     */
     public function testICanCreateCategory(CategoryPresentationTester $i): void
     {
         $i->amOnPage(CategoryCreatePage::URL);
@@ -61,12 +51,6 @@ class CategoryCreateCest
         $i->seeInPageSource(CategoryCreatePage::SUCCESS_MESSAGE);
     }
 
-    /**
-     * @param \SprykerTest\Zed\CategoryGui\CategoryPresentationTester $i
-     * @param array $attributes
-     *
-     * @return void
-     */
     protected function fillAttributeFields(CategoryPresentationTester $i, array $attributes): void
     {
         foreach ($attributes as $selector => $value) {

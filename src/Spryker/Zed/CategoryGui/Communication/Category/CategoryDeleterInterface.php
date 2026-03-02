@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\CategoryResponseTransfer;
 
 interface CategoryDeleterInterface
 {
-    /**
-     * @param int $idCategory
-     *
-     * @return \Generated\Shared\Transfer\CategoryResponseTransfer
-     */
     public function deleteCategory(int $idCategory): CategoryResponseTransfer;
 }

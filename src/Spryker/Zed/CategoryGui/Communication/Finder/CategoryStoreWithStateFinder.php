@@ -30,11 +30,6 @@ class CategoryStoreWithStateFinder implements CategoryStoreWithStateFinderInterf
      */
     protected $categoryStoreWithStateMapper;
 
-    /**
-     * @param \Spryker\Zed\CategoryGui\Dependency\Facade\CategoryGuiToCategoryFacadeInterface $categoryFacade
-     * @param \Spryker\Zed\CategoryGui\Dependency\Facade\CategoryGuiToStoreFacadeInterface $storeFacade
-     * @param \Spryker\Zed\CategoryGui\Communication\Mapper\CategoryStoreWithStateMapperInterface $categoryStoreWithStateMapper
-     */
     public function __construct(
         CategoryGuiToCategoryFacadeInterface $categoryFacade,
         CategoryGuiToStoreFacadeInterface $storeFacade,
@@ -45,11 +40,6 @@ class CategoryStoreWithStateFinder implements CategoryStoreWithStateFinderInterf
         $this->categoryStoreWithStateMapper = $categoryStoreWithStateMapper;
     }
 
-    /**
-     * @param int $idCategoryNode
-     *
-     * @return \Generated\Shared\Transfer\StoreWithStateCollectionTransfer
-     */
     public function getAllStoresWithStateByIdCategoryNode(int $idCategoryNode): StoreWithStateCollectionTransfer
     {
         $storeTransfers = $this->storeFacade->getAllStores();

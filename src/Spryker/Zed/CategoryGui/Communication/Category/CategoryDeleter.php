@@ -24,19 +24,11 @@ class CategoryDeleter implements CategoryDeleterInterface
      */
     protected $categoryFacade;
 
-    /**
-     * @param \Spryker\Zed\CategoryGui\Dependency\Facade\CategoryGuiToCategoryFacadeInterface $categoryFacade
-     */
     public function __construct(CategoryGuiToCategoryFacadeInterface $categoryFacade)
     {
         $this->categoryFacade = $categoryFacade;
     }
 
-    /**
-     * @param int $idCategory
-     *
-     * @return \Generated\Shared\Transfer\CategoryResponseTransfer
-     */
     public function deleteCategory(int $idCategory): CategoryResponseTransfer
     {
         $categoryResponseTransfer = (new CategoryResponseTransfer())

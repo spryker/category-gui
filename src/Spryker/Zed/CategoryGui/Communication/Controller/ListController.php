@@ -16,9 +16,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
  */
 class ListController extends AbstractController
 {
-    /**
-     * @return array
-     */
     public function indexAction(): array
     {
         $categoryTable = $this->getFactory()
@@ -29,9 +26,6 @@ class ListController extends AbstractController
         ]);
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     public function tableAction(): JsonResponse
     {
         $categoryTable = $this

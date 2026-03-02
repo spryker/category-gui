@@ -34,21 +34,11 @@ class CategoryListPage
      */
     public const SELECTOR_TREE_LIST = '#category-tree > div.dd > ol.dd-list';
 
-    /**
-     * @param int $position
-     *
-     * @return string
-     */
     public static function getAssignProductsButtonSelector(int $position = 1): string
     {
         return sprintf('//a[@title="Assign Products to this Category"][%s]', $position);
     }
 
-    /**
-     * @param int $position
-     *
-     * @return string
-     */
     public static function getDeleteButtonSelector(int $position = 1): string
     {
         return sprintf('//a[@title="Delete Category"][%s]', $position);

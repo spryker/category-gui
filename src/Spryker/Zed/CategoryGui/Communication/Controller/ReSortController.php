@@ -83,11 +83,6 @@ class ReSortController extends CategoryAbstractController
         ];
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     public function saveAction(Request $request): JsonResponse
     {
         $translationFacade = $this->getFactory()->getTranslatorFacade();
@@ -117,11 +112,6 @@ class ReSortController extends CategoryAbstractController
         ]);
     }
 
-    /**
-     * @param string|null $token
-     *
-     * @return bool
-     */
     protected function isCsrfTokenValid(?string $token): bool
     {
         if (!$token) {

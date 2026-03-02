@@ -29,11 +29,6 @@ class CategoryNodeOrderUpdater implements CategoryNodeOrderUpdaterInterface
      */
     protected CategoryNodeMapperInterface $categoryNodeMapper;
 
-    /**
-     * @param \Spryker\Zed\CategoryGui\Dependency\Facade\CategoryGuiToCategoryFacadeInterface $categoryFacade
-     * @param \Spryker\Zed\CategoryGui\Dependency\Service\CategoryGuiToUtilEncodingServiceInterface $utilEncodingService
-     * @param \Spryker\Zed\CategoryGui\Communication\Mapper\CategoryNodeMapperInterface $categoryNodeMapper
-     */
     public function __construct(
         CategoryGuiToCategoryFacadeInterface $categoryFacade,
         CategoryGuiToUtilEncodingServiceInterface $utilEncodingService,
@@ -44,11 +39,6 @@ class CategoryNodeOrderUpdater implements CategoryNodeOrderUpdaterInterface
         $this->categoryNodeMapper = $categoryNodeMapper;
     }
 
-    /**
-     * @param string $categoryNodesData
-     *
-     * @return bool
-     */
     public function updateCategoryNodeOrder(string $categoryNodesData): bool
     {
         /** @var list<array<string, mixed>> $categoryNodesToReorder */

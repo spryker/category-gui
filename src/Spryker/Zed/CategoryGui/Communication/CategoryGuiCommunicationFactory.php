@@ -61,9 +61,6 @@ use Symfony\Component\Validator\Constraint;
  */
 class CategoryGuiCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\CategoryGui\Communication\Table\CategoryTable
-     */
     public function createCategoryTable(): CategoryTable
     {
         return new CategoryTable(
@@ -72,11 +69,6 @@ class CategoryGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @param int|null $idParentNode
-     *
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function createCategoryCreateForm(?int $idParentNode): FormInterface
     {
         $categoryCreateDataFormProvider = $this->createCategoryCreateDataProvider();
@@ -88,9 +80,6 @@ class CategoryGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryGui\Communication\Form\DataProvider\Create\CategoryCreateDataProvider
-     */
     public function createCategoryCreateDataProvider(): CategoryCreateDataProvider
     {
         return new CategoryCreateDataProvider(
@@ -100,11 +89,6 @@ class CategoryGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CategoryTransfer $categoryTransfer
-     *
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function createCategoryEditForm(CategoryTransfer $categoryTransfer): FormInterface
     {
         $categoryCreateDataFormProvider = $this->createCategoryEditDataProvider();
@@ -116,9 +100,6 @@ class CategoryGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryGui\Communication\Form\DataProvider\Edit\CategoryEditDataProvider
-     */
     public function createCategoryEditDataProvider(): CategoryEditDataProvider
     {
         return new CategoryEditDataProvider(
@@ -127,11 +108,6 @@ class CategoryGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CategoryTransfer $categoryTransfer
-     *
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function createRootCategoryEditForm(CategoryTransfer $categoryTransfer): FormInterface
     {
         $rootCategoryCreateDataFormProvider = $this->createRootCategoryEditDataProvider();
@@ -143,9 +119,6 @@ class CategoryGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryGui\Communication\Form\DataProvider\Edit\RootCategoryEditDataProvider
-     */
     public function createRootCategoryEditDataProvider(): RootCategoryEditDataProvider
     {
         return new RootCategoryEditDataProvider(
@@ -154,11 +127,6 @@ class CategoryGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @param int $idCategory
-     *
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function createCategoryDeleteForm(int $idCategory): FormInterface
     {
         $categoryDeleteFormDataProvider = $this->createCategoryDeleteDataProvider();
@@ -169,17 +137,11 @@ class CategoryGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryGui\Communication\Form\DataProvider\CategoryDeleteDataProvider
-     */
     public function createCategoryDeleteDataProvider(): CategoryDeleteDataProvider
     {
         return new CategoryDeleteDataProvider($this->getCategoryFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryGui\Communication\Category\CategoryCreatorInterface
-     */
     public function createCategoryCreator(): CategoryCreatorInterface
     {
         return new CategoryCreator(
@@ -187,9 +149,6 @@ class CategoryGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryGui\Communication\Category\CategoryUpdaterInterface
-     */
     public function createCategoryUpdater(): CategoryUpdaterInterface
     {
         return new CategoryUpdater(
@@ -197,9 +156,6 @@ class CategoryGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryGui\Communication\Category\CategoryDeleterInterface
-     */
     public function createCategoryDeleter(): CategoryDeleterInterface
     {
         return new CategoryDeleter(
@@ -207,9 +163,6 @@ class CategoryGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryGui\Communication\Category\CategoryNodeOrderUpdaterInterface
-     */
     public function createCategoryNodeOrderUpdater(): CategoryNodeOrderUpdaterInterface
     {
         return new CategoryNodeOrderUpdater(
@@ -219,17 +172,11 @@ class CategoryGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\Gui\Communication\Tabs\TabsInterface
-     */
     public function createCategoryFormTabs(): TabsInterface
     {
         return new CategoryFormTabs($this->getCategoryFormTabExpanderPlugins());
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function createRootCategoryCreateForm(): FormInterface
     {
         $rootCategoryCreateDataFormProvider = $this->createRootCategoryCreateDataProvider();
@@ -241,9 +188,6 @@ class CategoryGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryGui\Communication\Form\DataProvider\Create\RootCategoryCreateDataProvider
-     */
     public function createRootCategoryCreateDataProvider(): RootCategoryCreateDataProvider
     {
         return new RootCategoryCreateDataProvider(
@@ -252,9 +196,6 @@ class CategoryGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryGui\Communication\Finder\CategoryStoreWithStateFinderInterface
-     */
     public function createCategoryStoreWithStateFinder(): CategoryStoreWithStateFinderInterface
     {
         return new CategoryStoreWithStateFinder(
@@ -264,9 +205,6 @@ class CategoryGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Symfony\Component\EventDispatcher\EventSubscriberInterface
-     */
     public function createCategoryStoreRelationFieldEventSubscriber(): EventSubscriberInterface
     {
         return new CategoryStoreRelationFieldEventSubscriber(
@@ -275,17 +213,11 @@ class CategoryGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryGui\Communication\Mapper\CategoryStoreWithStateMapperInterface
-     */
     public function createCategoryStoreWithStateMapper(): CategoryStoreWithStateMapperInterface
     {
         return new CategoryStoreWithStateMapper();
     }
 
-    /**
-     * @return \Symfony\Component\Validator\Constraint
-     */
     public function createCategoryLocalizedAttributeNameUniqueConstraint(): Constraint
     {
         return new CategoryLocalizedAttributeNameUniqueConstraint([
@@ -294,9 +226,6 @@ class CategoryGuiCommunicationFactory extends AbstractCommunicationFactory
         ]);
     }
 
-    /**
-     * @return \Symfony\Component\Validator\Constraint
-     */
     public function createCategoryKeyUniqueConstraint(): Constraint
     {
         return new CategoryKeyUniqueConstraint([
@@ -313,9 +242,6 @@ class CategoryGuiCommunicationFactory extends AbstractCommunicationFactory
         return new CategoryExtraParentsTransformer();
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryGui\Communication\Finder\CategoryFinderInterface
-     */
     public function createCategoryFinder(): CategoryFinderInterface
     {
         return new CategoryFinder(
@@ -325,49 +251,31 @@ class CategoryGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryGui\Communication\Expander\CategoryExpanderInterface
-     */
     public function createCategoryExpander(): CategoryExpanderInterface
     {
         return new CategoryExpander($this->getLocaleFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryGui\Communication\Mapper\CategoryNodeMapperInterface
-     */
     public function createCategoryNodeMapper(): CategoryNodeMapperInterface
     {
         return new CategoryNodeMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryGui\Dependency\Facade\CategoryGuiToStoreFacadeInterface
-     */
     public function getStoreFacade(): CategoryGuiToStoreFacadeInterface
     {
         return $this->getProvidedDependency(CategoryGuiDependencyProvider::FACADE_STORE);
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryGui\Dependency\Facade\CategoryGuiToLocaleFacadeInterface
-     */
     public function getLocaleFacade(): CategoryGuiToLocaleFacadeInterface
     {
         return $this->getProvidedDependency(CategoryGuiDependencyProvider::FACADE_LOCALE);
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryGui\Dependency\Facade\CategoryGuiToCategoryFacadeInterface
-     */
     public function getCategoryFacade(): CategoryGuiToCategoryFacadeInterface
     {
         return $this->getProvidedDependency(CategoryGuiDependencyProvider::FACADE_CATEGORY);
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryGui\Dependency\Facade\CategoryGuiToTranslatorFacadeInterface
-     */
     public function getTranslatorFacade(): CategoryGuiToTranslatorFacadeInterface
     {
         return $this->getProvidedDependency(CategoryGuiDependencyProvider::FACADE_TRANSLATOR);
@@ -397,25 +305,16 @@ class CategoryGuiCommunicationFactory extends AbstractCommunicationFactory
         return $this->getProvidedDependency(CategoryGuiDependencyProvider::PLUGINS_CATEGORY_RELATION_READ);
     }
 
-    /**
-     * @return \Symfony\Component\Security\Csrf\CsrfTokenManagerInterface
-     */
     public function getCsrfTokenManager(): CsrfTokenManagerInterface
     {
         return $this->getProvidedDependency(CategoryGuiDependencyProvider::SERVICE_FORM_CSRF_PROVIDER);
     }
 
-    /**
-     * @return \Spryker\Zed\CategoryGui\Dependency\Service\CategoryGuiToUtilEncodingServiceInterface
-     */
     public function getUtilEncodingService(): CategoryGuiToUtilEncodingServiceInterface
     {
         return $this->getProvidedDependency(CategoryGuiDependencyProvider::SERVICE_UTIL_ENCODING);
     }
 
-    /**
-     * @return \Spryker\Zed\Kernel\Communication\Form\FormTypeInterface
-     */
     public function getStoreRelationFormTypePlugin(): FormTypeInterface
     {
         return $this->getProvidedDependency(CategoryGuiDependencyProvider::PLUGIN_STORE_RELATION_FORM_TYPE);

@@ -111,10 +111,6 @@ class CategoryTable extends AbstractTable
      */
     protected $categoryGuiRepository;
 
-    /**
-     * @param \Spryker\Zed\CategoryGui\Dependency\Facade\CategoryGuiToLocaleFacadeInterface $localeFacade
-     * @param \Spryker\Zed\CategoryGui\Persistence\CategoryGuiRepositoryInterface $categoryGuiRepository
-     */
     public function __construct(
         CategoryGuiToLocaleFacadeInterface $localeFacade,
         CategoryGuiRepositoryInterface $categoryGuiRepository
@@ -123,11 +119,6 @@ class CategoryTable extends AbstractTable
         $this->categoryGuiRepository = $categoryGuiRepository;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function configure(TableConfiguration $config): TableConfiguration
     {
         $config->setHeader([
@@ -169,11 +160,6 @@ class CategoryTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return array
-     */
     protected function prepareData(TableConfiguration $config): array
     {
         $fkLocale = $this->localeFacade->getCurrentLocale()->getIdLocaleOrFail();
@@ -192,11 +178,6 @@ class CategoryTable extends AbstractTable
         return $categoryCollection;
     }
 
-    /**
-     * @param int $fkLocale
-     *
-     * @return \Orm\Zed\Category\Persistence\SpyCategoryQuery
-     */
     protected function prepareQuery(int $fkLocale): SpyCategoryQuery
     {
         /** @var \Orm\Zed\Category\Persistence\SpyCategoryQuery $query */
@@ -263,11 +244,6 @@ class CategoryTable extends AbstractTable
         ];
     }
 
-    /**
-     * @param bool $condition
-     *
-     * @return string
-     */
     protected function yesNoOutput(bool $condition): string
     {
         if ($condition === true) {
@@ -277,11 +253,6 @@ class CategoryTable extends AbstractTable
         return 'No';
     }
 
-    /**
-     * @param \Orm\Zed\Category\Persistence\SpyCategory $item
-     *
-     * @return string
-     */
     protected function generateActionsButton(SpyCategory $item): string
     {
         $buttonGroupItems = [];
@@ -308,11 +279,6 @@ class CategoryTable extends AbstractTable
         );
     }
 
-    /**
-     * @param \Orm\Zed\Category\Persistence\SpyCategory $item
-     *
-     * @return array
-     */
     protected function generateAssignProductsButtonGroupItem(SpyCategory $item): array
     {
         return $this->createButtonGroupItem(
@@ -324,11 +290,6 @@ class CategoryTable extends AbstractTable
         );
     }
 
-    /**
-     * @param \Orm\Zed\Category\Persistence\SpyCategory $item
-     *
-     * @return array
-     */
     protected function generateEditCategoryButtonGroupItem(SpyCategory $item): array
     {
         return $this->createButtonGroupItem(
@@ -339,11 +300,6 @@ class CategoryTable extends AbstractTable
         );
     }
 
-    /**
-     * @param \Orm\Zed\Category\Persistence\SpyCategory $item
-     *
-     * @return array
-     */
     protected function generateCategoryRemoveButtonGroupItem(SpyCategory $item): array
     {
         return $this->createButtonGroupItem(
@@ -354,11 +310,6 @@ class CategoryTable extends AbstractTable
         );
     }
 
-    /**
-     * @param \Orm\Zed\Category\Persistence\SpyCategory $item
-     *
-     * @return array
-     */
     protected function generateCategoryResortButtonGroupItem(SpyCategory $item): array
     {
         return $this->createButtonGroupItem(
@@ -369,11 +320,6 @@ class CategoryTable extends AbstractTable
         );
     }
 
-    /**
-     * @param \Orm\Zed\Category\Persistence\SpyCategory $item
-     *
-     * @return array
-     */
     protected function generateAddCategoryToNodeButtonGroupItem(SpyCategory $item): array
     {
         return $this->createButtonGroupItem(
@@ -385,11 +331,6 @@ class CategoryTable extends AbstractTable
         );
     }
 
-    /**
-     * @param \Orm\Zed\Category\Persistence\SpyCategory $categoryEntity
-     *
-     * @return bool
-     */
     protected function isRootCategory(SpyCategory $categoryEntity): bool
     {
         return (bool)$categoryEntity->getVirtualColumn(static::COL_IS_ROOT);

@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\StoreWithStateCollectionTransfer;
 
 interface CategoryStoreWithStateFinderInterface
 {
-    /**
-     * @param int $idCategoryNode
-     *
-     * @return \Generated\Shared\Transfer\StoreWithStateCollectionTransfer
-     */
     public function getAllStoresWithStateByIdCategoryNode(int $idCategoryNode): StoreWithStateCollectionTransfer;
 
     /**

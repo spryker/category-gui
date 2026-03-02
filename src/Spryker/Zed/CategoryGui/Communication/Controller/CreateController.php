@@ -66,11 +66,6 @@ class CreateController extends CategoryAbstractController
         ]);
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $form
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     protected function handleCategoryCreateForm(FormInterface $form): RedirectResponse
     {
         $categoryResponseTransfer = $this->getFactory()
@@ -90,11 +85,6 @@ class CreateController extends CategoryAbstractController
         );
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\Form\FormInterface
-     */
     protected function getForm(Request $request): FormInterface
     {
         if ($request->query->get(static::REQUEST_PARAM_IS_ROOT)) {
@@ -106,11 +96,6 @@ class CreateController extends CategoryAbstractController
         );
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return int|null
-     */
     protected function readParentNodeId(Request $request): ?int
     {
         $parentNodeId = $request->query->get(static::REQUEST_PARAM_ID_PARENT_NODE);
@@ -122,11 +107,6 @@ class CreateController extends CategoryAbstractController
         return $this->castId($parentNodeId);
     }
 
-    /**
-     * @param int $idCategory
-     *
-     * @return string
-     */
     protected function createSuccessRedirectUrl(int $idCategory): string
     {
         $url = Url::generate(
