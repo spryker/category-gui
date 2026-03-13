@@ -27,7 +27,7 @@ class CategoryListPage
     /**
      * @var string
      */
-    public const BUTTON_CREATE_CATEGORY = '//div[@class="title-action"]/a';
+    public const BUTTON_CREATE_CATEGORY = '//div[@data-qa="title-action"]/a';
 
     /**
      * @var string

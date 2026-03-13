@@ -39,5 +39,5 @@ class CategoryReSortPage
     /**
      * @var string
      */
-    public const SELECTOR_ALERT_BOX = '.sweet-alert';
+    public const SELECTOR_ALERT_BOX = '.swal2-container';
 }
