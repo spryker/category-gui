@@ -76,6 +76,7 @@ class CategoryReSortCest
         );
         $i->click(CategoryReSortPage::SELECTOR_SAVE_BUTTON);
         $i->waitForElement(CategoryReSortPage::SELECTOR_ALERT_BOX);
+        $i->waitForText('Success');
         $i->canSee('Success', CategoryReSortPage::SELECTOR_ALERT_BOX);
 
         $i->amOnPage(CategoryReSortPage::URL);
