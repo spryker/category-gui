@@ -30,7 +30,7 @@ class CategoryExtraParentsTransformer implements DataTransformerInterface
      *
      * @return \ArrayObject<int|string, \Generated\Shared\Transfer\NodeTransfer>|null
      */
-    public function reverseTransform($value)
+    public function reverseTransform($value): mixed
     {
         return new ArrayObject($value);
     }
